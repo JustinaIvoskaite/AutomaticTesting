@@ -1,16 +1,27 @@
-# This is a sample Python script.
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome(service = ChromeService(ChromeDriverManager().install()))
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+#Performance test,
+def Verification():
+    driver.get("https://demo.betgames.tv")
+
+    driver.quit()
+
+#for testing window size for different selections-is it a tablet, mobile or dekstop:
+def TestWindowDisplay():
+    driver.set_window_size()
+
+def PerformaceTesting():
+    return
+
+def ContactingServiceTest():
+    driver.get("https://demo.betgames.tv")
+    email_input =driver.find_element(By.NAME("email"))
+    message_input = driver.find_element(By.NAME("message"))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    Verification()
