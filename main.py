@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
@@ -25,3 +26,4 @@ def ContactingServiceTest():
 
 if __name__ == "__main__":
     Verification()
+    input("Press Enter to close the browser...")
