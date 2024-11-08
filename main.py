@@ -17,9 +17,6 @@ def PlacingTheBet():
     )
     driver.switch_to.frame(iframe)
 
-    #print(f"Number of elements found: {len(elements)}")
-
-
     button_select_skyward = WebDriverWait(driver, 15).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-qa='area-game-card-27']"))
         )
@@ -55,6 +52,8 @@ def PlacingTheBet():
     time.sleep(35)
 
     driver.quit()
+
+
 def ContactingServiceTest():
     driver.get("https://demo.betgames.tv")
     language_first = "Lithuanian"
