@@ -1,12 +1,15 @@
-class ContactTheService:
+from BaseFunctions import baseFunctions
+
+class ContactTheService(baseFunctions):
     def __init__(self, page):
-        self.page = page
+        super().__init__(page)
         #locators
         self.get_language_parent = page.locator("#language")
         self.email_input =  page.locator("#email")
         self.message_input = page.locator("#message")
         self.send_btn = page.locator(".send.btn.btn-primary.pull-left")
         self.success =page.locator("#send")
+
     async def navigate(self):
         await self.page.goto("https://demo.betgames.tv")
 
@@ -23,3 +26,4 @@ class ContactTheService:
     async def getTheMessage(self):
         got_text = await self.success.text_content()
         return got_text
+
